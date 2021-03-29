@@ -3,13 +3,13 @@ const CustomError = require("../extensions/custom-error");
 module.exports = function transform(arr) {
 
   if (!Array.isArray(arr)) throw new Error();
-
+  
   let resultArr = [];
   let arrLength = arr.length;
 
   for (let i = 0; i < arrLength; i++) {
     switch (arr[i]) {
-      case '--discard-next':
+      case '--discard-next': 
         i++;
         break;
       case '--discard-prev':
@@ -26,6 +26,6 @@ module.exports = function transform(arr) {
         break;
     }
   }
-
+  
   return resultArr;
 };
